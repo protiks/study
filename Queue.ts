@@ -1,13 +1,16 @@
 class Queue<T> {
- 
   public data: T[] = [];
+
+  clear() {
+    this.data = [];
+  }
 
   enqueue(item: T) {
     this.data.push(item);
   }
 
   dequeue(): T | undefined {
-   return this.data.shift()
+    return this.data.shift()
   }
 
   peek(): T | undefined {

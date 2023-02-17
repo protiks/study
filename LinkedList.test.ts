@@ -1,9 +1,7 @@
-// fix the typescript error in line 14 and 15
-
 import LinkedList from './LinkedList';
 
 describe('linkedList', () => {
-    let list: LinkedList;
+    let list: LinkedList<number>
     beforeEach(() => {
         list = new LinkedList();
     });
@@ -111,5 +109,110 @@ describe('linkedList', () => {
             expect(array).toEqual([10, 20, 30]);
         });
     });
+
+
+    describe('LinkedList', () => {
+        it('should create empty linked list', () => {
+            const linkedList = new LinkedList();
+            expect(linkedList.toString()).toBe('');
+        });
+    })
+
+    describe('LinkedList', () => {
+        let list: LinkedList<number>
+
+        beforeEach(() => {
+            list = new LinkedList();
+        });
+
+        test('it can add to the end of the list', () => {
+            list.add(1);
+            list.add(2);
+            list.add(3);
+
+            expect(list.toArray()).toEqual([1, 2, 3]);
+        });
+
+        test('it can prepend to the beginning of the list', () => {
+            list.prepend(1);
+            list.prepend(2);
+            list.prepend(3);
+
+            expect(list.toArray()).toEqual([3, 2, 1]);
+        });
+
+        test('it can remove from the beginning of the list', () => {
+            list.add(1);
+            list.add(2);
+            list.add(3);
+
+            list.shift();
+
+            expect(list.toArray()).toEqual([2, 3]);
+        });
+
+        test('it can remove from the end of the list', () => {
+            list.add(1);
+            list.add(2);
+            list.add(3);
+
+            list.pop();
+
+            expect(list.toArray()).toEqual([1, 2]);
+        });
+
+        test('it can insert at a specific position in the list', () => {
+            list.add(1);
+            list.add(2);
+            list.add(3);
+
+            list.insert(1, 4);
+
+            expect(list.toArray()).toEqual([1, 4, 2, 3]);
+        });
+
+        test('it can get the value at a specific position in the list', () => {
+            list.add(1);
+            list.add(2);
+            list.add(3);
+
+            expect(list.get(1)).toEqual(2);
+        });
+
+        test('it returns null if trying to get a value at an out of bounds position', () => {
+            list.add(1);
+            list.add(2);
+            list.add(3);
+
+            expect(list.get(5)).toBeNull();
+        });
+
+        test('it can delete a node with a specific value from the list', () => {
+            list.add(1);
+            list.add(2);
+            list.add(3);
+
+            list.remove(2);
+
+            expect(list.toArray()).toEqual([1, 3]);
+        });
+
+        test('it returns null if trying to delete a value that does not exist in the list', () => {
+            list.add(1);
+            list.add(2);
+            list.add(3);
+
+            expect(list.remove(5)).toBeNull();
+        });
+
+        test('it can handle an empty list', () => {
+            expect(list.toArray()).toEqual([]);
+            expect(list.pop()).toBeNull();
+            expect(list.shift()).toBeNull();
+            expect(list.get(0)).toBeNull();
+            expect(list.delete(1)).toBeNull();
+        });
+    });
+
 });
 
