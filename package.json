@@ -13,5 +13,10 @@
   "scripts": {
     "test": "yarn jest",
     "w": "yarn jest --watch"
+  },
+  "dependencies": {
+    "@types/benchmark": "^2.1.2",
+    "benchmark": "^2.1.4",
+    "ts-node": "^10.9.1"
   }
 }

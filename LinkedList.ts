@@ -12,6 +12,15 @@ class LinkedListNode<T> {
 }
 
 class LinkedList<T> {
+    insert(arg0: number, arg1: number) {
+        throw new Error('Method not implemented.');
+    }
+    shift() {
+        throw new Error('Method not implemented.');
+    }
+    pop() {
+        throw new Error('Method not implemented.');
+    }
     head: LinkedListNode<T> | null // Declare a property 'tail' with type 'LinkedListNode | null'
     tail: LinkedListNode<T> | null // Declare a property 'tail' with type 'LinkedListNode | null'
     length: number // Declare a property 'length' with type 'number'
@@ -34,7 +43,12 @@ class LinkedList<T> {
     toString(callback?: (value: T) => string) {
         return this.toArray().map((node) => callback ? callback(node.value) : `${node.value}`).join(',');
     }
-
+    traverse(fn: (arg0: T) => void){
+        let current = this.head
+        while(current !== null) {
+            fn(current.value)
+        }
+    }
     deleteTail() {
         const deletedTail = this.tail;
 
