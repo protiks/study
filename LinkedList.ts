@@ -12,15 +12,6 @@ class LinkedListNode<T> {
 }
 
 class LinkedList<T> {
-    insert(arg0: number, arg1: number) {
-        throw new Error('Method not implemented.');
-    }
-    shift() {
-        throw new Error('Method not implemented.');
-    }
-    pop() {
-        throw new Error('Method not implemented.');
-    }
     head: LinkedListNode<T> | null // Declare a property 'tail' with type 'LinkedListNode | null'
     tail: LinkedListNode<T> | null // Declare a property 'tail' with type 'LinkedListNode | null'
     length: number // Declare a property 'length' with type 'number'
@@ -112,7 +103,7 @@ class LinkedList<T> {
         return node;
     }
 
-    remove(value: any) {
+    remove(value: T) {
         if (!this.head) { // Check if there is no head node, return false
             return false;
         }
