@@ -1,19 +1,33 @@
-class TreeNote<T> {
-    value: T
-    children: T[]
-    constructor(value: T){
+
+
+class BinaryTreeNode<T> {
+    value: T 
+    left: BinaryTreeNode<T> | null
+    right: BinaryTreeNode<T> | null
+    constructor(value: T) {
         this.value = value
-        this.children = [];
-    }
-}
-class Tree<T> {
-    root: T | null
-    constructor() {
-        this.root = null
-    }
-    size(): number {
-        return 0
+        this.left = null
+        this.right = null
     }
 }
 
-export default Tree;
+class BinaryTree<T> {
+   root: BinaryTreeNode<T> | null 
+
+   constructor() {
+         this.root = null
+   }
+   insert(value: T){
+        const new_node = new BinaryTreeNode(value)
+        if(!this.root){
+           this.root = new_node 
+           return this.root
+        }
+
+        let curr = this.root
+
+   }
+
+}
+
+export default BinaryTree;

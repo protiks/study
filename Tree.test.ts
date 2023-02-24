@@ -1,16 +1,13 @@
 import Tree from './Tree';
 
 describe('Tree', () => {
-    let tree: Tree<number>
-    beforeEach(() => {
-        tree = new Tree()
-    })
-    test('creates an empty tree', () => {
+    it('should return null when a new tree.root is created', () => {
+        let tree = new Tree();
         expect(tree.root).toBeNull()
     })
-    test('add a value to the root node', () => {
-        tree.root = 5
-        expect(tree.root).toBe(5)
-
+    it('should insert a value to the root', () => {
+        let tree = new Tree()
+        tree.insert('4')
+        expect(tree.root?.value).toBe('4')
     })
-});
+})
