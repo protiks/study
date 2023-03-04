@@ -8,6 +8,6 @@ describe('Tree', () => {
     it('should insert a value to the root', () => {
         let tree = new Tree()
         tree.insert('4')
-        expect(tree.root?.value).toBe('4')
+        expect(tree.root?.item).toBe('4')
     })
 })
