@@ -17,6 +17,7 @@
   "dependencies": {
     "@types/benchmark": "^2.1.2",
     "benchmark": "^2.1.4",
+    "node-ts": "^5.1.2",
     "ts-node": "^10.9.1"
   }
 }
